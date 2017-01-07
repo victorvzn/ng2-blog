@@ -1,0 +1,42 @@
+<div class="container">
+  <spinner class="spinner" [isRunning]="isBusy"></spinner>
+  <div class="alert-center">
+    <div class="alert" *ngFor="let message of messages; let i = index" [ng-class]="message.type">
+      <button type="button" class="close" (click)="closeMessage(i)">&times;</button>
+      {{message.text}}
+    </div>
+  </div>
+  <div class="header">
+    <img src="images/logo.png" />
+    <h1>Angular 2 Blog</h1>
+  </div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Desplegar navegación</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse" *ngIf="loggedUser != null" >
+      <ul id="nav-bar" class="nav navbar-nav">
+        <li><a [routerLink]="['/posts']" routerLinkActive="active">Recent posts</a></li>
+        <li><a [routerLink]="['/new/post']" routerLinkActive="active">New post</a></li>
+        <li><a [routerLink]="['/account']" routerLinkActive="active">Account</a></li>
+      </ul>
+      <div class="navbar-form navbar-left" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="searchText">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" (click)="search()">Search</button>
+          </span>
+        </div>
+      </div>
+      <p class="navbar-text pull-right">
+        <span class="glyphicon glyphicon-user"></span>&nbsp;
+        {{loggedUser}} | <a href="#" (click)="logout">Logout</a>
+      </p>
+    </div>
+  </nav>
+</div>

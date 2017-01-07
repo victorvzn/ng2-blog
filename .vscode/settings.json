@@ -1,0 +1,27 @@
+// Coloque su configuración en este archivo para sobrescribir la configuración predeterminada y de usuario.
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/app/**/*.js": true,
+    "**/app/**/*.js.map": true,
+    "**/e2e/*.js": true,
+    "**/e2e/*.js.map": true,
+    "**/node_modules": true,
+    "**/.gitignore": true,
+    "**/.travis.yml": true,
+    "**/favicon.ico": true,
+    "**/karma.conf.js": true,
+    "**/karma-test-shim.js": true,
+    "**/protractor.config.js": true,
+    "**/systemjs.config.extras.js": true,
+    "**/systemjs.config.js": true,
+    "**/tsconfig.json": true,
+    "**/tslint.json": true
+  }
+,
+"editor.tabSize": 2,
+"editor.insertSpaces": true
+}
