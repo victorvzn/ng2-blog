@@ -14,7 +14,6 @@ import { PostService } from './post/post.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  name = 'Angular';
   public loggedUser: string;
   public isBusy: boolean = false;
   public searchText: string;

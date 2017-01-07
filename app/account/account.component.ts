@@ -41,8 +41,7 @@ export class AccountComponent implements OnInit {
     }
   }
 
-  public imageSelected(file): void {
-
+  public imageSelected(file: string): void {
   }
 
   public save(): void {

@@ -16,7 +16,7 @@ export class UserService {
    * Requests a new auth token for the given credentials
    * and stores it for future api calls.
    */
-  public login(email, password): Promise<void> {
+  public login(email: string, password: string): Promise<void> {
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-utlencoded');
     headers.append('Accept', 'application/json');
@@ -72,5 +72,30 @@ export class UserService {
    headers.append('Content-Type', 'application/json');
    headers.append('Accept', 'application/json');
    headers.append('Authorization', authorization);
+   return headers;
+  }
+
+  private getUserSession(): any {
+  }
+
+  private getAuthToken(): any {
+  }
+}
+
+class TokenRequest {
+  constructor(email: string, password: string) {
+  }
+
+  public toUrlEncoded():void {
+  }
+}
+
+class UserSession {
+  public token: string;
+  public userName: string;
+  public issueDate: Date;
+  public expireDate: Date;
+
+  constructor() {
   }
 }
