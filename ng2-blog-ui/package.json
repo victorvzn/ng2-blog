@@ -1,7 +1,7 @@
 {
-  "name": "ng2-blog-belatrix",
-  "version": "0.1.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "name": "ng2-blog-ui",
+  "version": "0.2.0",
+  "description": "Angular Blog ui",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
