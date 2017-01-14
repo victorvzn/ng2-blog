@@ -1,0 +1,25 @@
+.spinner {
+    z-index: 10000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+    opacity: .5;
+}
+
+.spinner #spinner-container {
+    position:relative;
+    top: calc(50vh - 35px);
+    left: calc(50vw - 35px);
+    width: 64px;
+}
+
+.spinner #spinner-img {
+    content: url(images/spinner.gif);
+}
+
+.spinner span {
+    color: white;
+}

@@ -1,29 +1,45 @@
-<div class="page-header">
-  <h1>Test post <small>by Mariano Mazzetti</small></h1>
-  <p>Posted on: {{timestamp}}</p>
-  <p>Tags: <span class="label label-default">Bootstrap</span> <span class="label label-default">HTML5</span></p>
-</div>
-
-<p>
-  {{content}}
-</p>
-
-<h3>Comments:</h4>
-
-<div class="panel panel-default">
-  <div class="panel-heading">On {{timestamp}}, {{username}} wrote:</div>
-  <div class="panel-body">
-    {{comment_content}}
-  </div>
-</div>
-
-<div class="well">
-  <div role="form" class="form">
-    <div class="form-group">
-      <textarea rows="4" class="form-control"></textarea>
+<div *ngIf="post != null">
+    <div class="row page-header">
+        <div class="col-xs-12">
+            <h3>{{post.Title}} <small>by {{post.Author}}</small></h3>
+            <p>Posted on: {{post.FormattedDate}} - {{post.FormattedTime}}</p>
+            <p>
+                Tags:
+                <span *ngFor="let tag of post.Tags">
+                    <span class="label label-default">{{tag}}</span>
+                    <wbr />
+                </span>
+            </p>
+        </div>
     </div>
-    <div class="form-group">
-      <button type="button" class="btn btn-primary">Add comment</button>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>{{post.Body}}</p>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>Comments:</h4>
+            <div class="panel panel-default" *ngFor="let comment of post.Comments">
+                <div class="panel-heading">
+                    On {{comment.FormattedDate}}
+                    at {{comment.FormattedTime}},
+                    <i>{{comment.Author}}</i> wrote:
+                </div>
+                <div class="panel-body">
+                    {{comment.Text}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="well">
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" [(ngModel)]="commentText"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" (click)="addComment()">Add Comment</button>
+            </div>
+        </div>
+    </div>
 </div>

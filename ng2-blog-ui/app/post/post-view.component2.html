@@ -1,0 +1,36 @@
+<div *ngIf="post != null">
+  <div class="page-header">
+    <h1>{{post.Title}} <small>by {{post.Author}}</small></h1>
+    <p>Posted on: {{post.FormattedDate}} - {{post.FormattedTime}}</p>
+    <p>Tags: 
+      <span *ngFor="let tag of post.Tags">
+        <span class="label label-default">{{tag}}</span>
+        <wbr />
+      </span>
+    </p>
+  </div>
+
+  <p>
+    {{post.Body}}
+  </p>
+
+  <h4>Comments:</h4>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">On {{timestamp}}, {{username}} wrote:</div>
+    <div class="panel-body">
+      {{comment_content}}
+    </div>
+  </div>
+
+  <div class="well">
+    <div role="form" class="form">
+      <div class="form-group">
+        <textarea rows="4" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary">Add comment</button>
+      </div>
+    </div>
+  </div>
+</div>

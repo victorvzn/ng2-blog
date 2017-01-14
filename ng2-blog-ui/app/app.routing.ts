@@ -90,4 +90,7 @@ const appRoutes: Routes = [
   }
 ];
 
+/**
+ * Defines all the routes of the application.
+ */
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
